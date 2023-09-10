@@ -18,6 +18,9 @@ const CreatePrompt = () => {
 
   const createPrompt = async (e) => {
     e.preventDefault();
+    if (!session?.user.id) {
+      return alert("You must sign in first to create post!");
+    }
     setSubmitting(true);
 
     try {
